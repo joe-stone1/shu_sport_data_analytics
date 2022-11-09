@@ -1,0 +1,16 @@
+---
+title: "Why R? "
+author: "Joe Stone"
+date: "27/10/2022"
+output: html_document
+weight: 1
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Why to use R? 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9kYUGMg_14s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+

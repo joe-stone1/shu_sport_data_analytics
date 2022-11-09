@@ -1,0 +1,27 @@
+---
+title: "Accessing Statsbomb Data"
+author: "Joe Stone"
+date: "27/10/2022"
+output: html_document
+weight: 1
+---
+
+
+
+<p><img src="/en/images/Statsbomb_Logo.jpeg?classes=shadow&amp;width=50pc" alt="Statsbomb" />
+<a href="https://statsbomb.com">Statsbomb Website</a></p>
+<p>Statsbomb kindly provide a range of data sets at no cost. An overview of the available data can be found here: <a href="https://statsbomb.com/what-we-do/hub/free-data/">Free Data</a>. The code below can be ran in R to see which specific competitions and data sets you can access.</p>
+<pre class="r"><code>#Required packages
+library(tidyverse)
+library(StatsBombR)
+library(dplyr)</code></pre>
+<pre class="r"><code>#Loads competitions which are available
+Comp &lt;- FreeCompetitions() #this gives you the competitions ids used below
+view(Comp)</code></pre>
+<p>Here the code accessing the free data sets. Using the code above, you can find the specific id’s for competitions and seasons</p>
+<pre class="r"><code>#Loading Free Data
+Comp &lt;- FreeCompetitions()
+Women_Euro &lt;- FreeCompetitions() %&gt;% 
+  filter(competition_id==53 &amp; season_id==106) #this loads the specific competition and season
+Matches &lt;- FreeMatches(Women_Euro)
+StatsBombEvents &lt;- StatsBombFreeEvents(MatchesDF = Matches, Parallel = T)</code></pre>
